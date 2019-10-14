@@ -97,7 +97,7 @@ server.setTimeout(4000);
 server.listen(3000,'localhost'); */
 
 // 7.fs 实现 表现，行为 分离
-
+/*
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
@@ -159,7 +159,7 @@ const getHtml = (filename,req,res) => {
     });
 }
 
-
+*/
 // 8. get 和 post 请求，对数据的处理
 //   post 发送的数据会被写入缓存区，需要通过request参数对象中的on方法监听，data和end事件来进行数据拼接处理
 
