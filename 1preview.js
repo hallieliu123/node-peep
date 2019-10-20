@@ -9,7 +9,8 @@
 // --异：顶层对象：Nodejs--global;javaScript--window (其实在js中global对象也是存在，只是不对外访问，使用window对象指向它);    
 
 
-
+// npm ( node 包管理工具) 模块包管理工具   
+//  通过npm可以下载安装第三方的模块，也可以创建和发布自己的模块。
 
 
 

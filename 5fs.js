@@ -158,7 +158,7 @@ const fs = require('fs'); // node 核心模块 之 fs
     log(f); */
 
 // 7.fs.stat(filename,(err,info)=>{}); 异步读取文件信息
-//   fs.statSync(filename); 同步读取文件信息,返回文件信息
+//   const f = fs.statSync(filename); 同步读取文件信息,返回文件信息; f.isDirectory() 是否是文件夹,返回true or false
 
    /*  let filename = './1.txt';
     fs.stat(filename,function(err,info){
@@ -211,7 +211,16 @@ const fs = require('fs'); // node 核心模块 之 fs
             });
        }); */
 
-// 11个
+// 12.fs.createReadStream(); fs.createWriteStream()
+    // let ori = fs.createReadStream('./1.jpg');
+    // let newImg = fs.createWriteStream('./2.jpg');
+    // ori.pipe(newImg);
+
+// 13.path模块,用来处理文件路径
+// path.resolve(); 返回当前文件所在目录,path.resolve(__dirname,'../public/index.css'); ..表示返回上一级
+// path.join('',''); 拼接路径
+
+// 13个
 
 
 

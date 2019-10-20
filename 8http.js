@@ -73,28 +73,29 @@ const { log } = console;
 // 6.url模块，提供处理url参数的方法
 // const url = rquire('url');
 // let urlJson = url.parse(req.url);
-/* 
+
 const http = require('http');
+const fs = require('fs');
 const url = require('url');
 let server = http.createServer((req,res)=>{
     let urlJson = url.parse( req.url );
     // urlJson.query: 储存着查询字符串
     // urlJson.pathname: 储存着url路径,
     // urlJson.href: 储存着完整url
-    log('url--->',urlJson);
-    if(urlJson.pathname.search(/index/)>-1){
-        res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>首页</h1>');
-    }else if(urlJson.pathname.search(/user/)>-1){
-        res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>个人中心</h1>');
-    }else{
-        res.writeHead(404,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>not found</h1>');
-    }
+    // if(urlJson.pathname.search(/index/)>-1){
+    //     res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>首页</h1>');
+    // }else if(urlJson.pathname.search(/user/)>-1){
+    //     res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>个人中心</h1>');
+    // }else{
+    //     res.writeHead(404,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>not found</h1>');
+    // }
+    // fs.createReadStream('./1.jpg').pipe(res); // res 
 });
 server.setTimeout(4000);
-server.listen(3000,'localhost'); */
+server.listen(3000,'localhost'); 
 
 // 7.fs 实现 表现，行为 分离
 /*
@@ -158,10 +159,15 @@ const getHtml = (filename,req,res) => {
         }
     });
 }
-
 */
+
 // 8. get 和 post 请求，对数据的处理
 //   post 发送的数据会被写入缓存区，需要通过request参数对象中的on方法监听，data和end事件来进行数据拼接处理
+
+
+
+
+
 
 
 
