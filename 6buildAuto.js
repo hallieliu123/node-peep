@@ -1,4 +1,5 @@
-//  前端项目自动化  -- 自动化构建项目
+// 前端项目自动化 -- 自动化构建项目   
+
 const fs = require('fs');
 let project = {
     name: 'app',
@@ -14,8 +15,8 @@ let project = {
 fs.mkdir(project.name,(err)=>{
     if(err) return;
     let filelist = project.projectFile;
-    if(filelist && Array.isArray(filelist)){
-        filelist.forEach(item=>{
+    if(filelist && Array.isArray(filelist)){   
+        filelist.forEach( item => {  
             let path = `./${project.name}/${item.name}`;
             if(item.type == 'dir'){
                 fs.mkdirSync(path)
@@ -25,8 +26,6 @@ fs.mkdir(project.name,(err)=>{
         })
     }
 });
-
-
 
 
 

@@ -1,11 +1,11 @@
 const { log } = console;
 // buffer 用于操作二进制数据流   
 /**
-    -- 一个更好的用于操作二进制数据的类 ： 我们在操作文件或者网络数据的时候，其实操作的就是二进制数据流，Node为我们提供了一个更方便的操作这种数据流的类Bffer, Buffer大小在创建是设定，且无法改变。
-    -- Buffer.alloc( size,fill,encoding )  
-    --Buffer.from(  array  /  string  )  
+    -- 一个更好的用于操作二进制数据的类: 我们在操作文件或者网络数据的时候，其实操作的就是二进制数据流，Node为我们提供了一个更方便的操作这种数据流的类Bffer, Buffer大小在创建是设定，且无法改变。
+        -- Buffer.alloc( size,fill,encoding )  
+        -- Buffer.from(  array  /  string  )  
     --属性、方法：
-    --1). bf.length : buffer的字节大小(不是字符，一个中文字符占用3个字节)      
+    --1).bf.length : buffer的字节大小(不是字符，一个中文字符占用3个字节)      
     --2).bf[ index ] : 获取、设定index位置字节内容     
     --3).bf.write(str,buffer偏移量,截取写入的字符串长度,'buffer的编码格式') : 根据参数 offset 的偏移量和指定的encoding，将参数str写入buffer;  
     --4).bf.toString([encoding转成格式编码],[start],[end不包含]) : 根据encoding参数(默认为utf-8),返回一个解码的string类型;    
@@ -16,10 +16,9 @@ const { log } = console;
     --9).类方法，静态方法：
             Buffer.isEncoding('编码类型')：Buffer是否支持此编码类型,返回 true or false
             Buffer.isBuffer( obj ):obj是否是一个Buffer,返回 true or false
-            Buffer.concate(buffer数组，buffer数组字节长度)：返回合成后的一个buffer
+            Buffer.concat(buffer数组，buffer数组字节长度)：返回合成后的一个buffer
             Buffer.byteLength(string,encoding) 返回一个字符串的真实字节长度,默认encoding:utf-8
  */
-
 // alloc(),from(),write(),for,for..of,slice();copy();toString();toJSON();length;bf[index]
 // Buffer.isEncoding();Buffer.isBuffer();Buffer.byteLength();
 
@@ -53,12 +52,13 @@ const { log } = console;
 // log('bf9-->',bf9);
 // for(let i=0;i<bf9.length;i++){  // 也可以用 for...of循环，有buffer.keys(),buffer.values();buffer.entries()方法
 //     log('bf9[i].-10进制->',bf9[i].toString());
+//     log('typeof bf9[i]->',typeof bf9[i]);
 //     log('bf9[i].-16进制->',bf9[i].toString(16)); // 这里调用的不是buffer的toString()方法了
 //     log(String.fromCharCode(bf9[i]));
 // }
 
 // let bf10 = Buffer.alloc(5,'world');
-// log(bf10.toJSON()); 
+// log(bf10.toJSON()); // { type: 'Buffer', data: [ 119, 111, 114, 108, 100 ] }
 // log(typeof bf10.toJSON()); 
 // log(bf10.toString());
 

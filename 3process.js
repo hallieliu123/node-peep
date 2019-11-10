@@ -1,9 +1,9 @@
 const { log } = console;
 
-// 全局对象 process : 提供了对当前运行程序进程的访问和控制的方法
+// 全局对象 process: 提供了对当前运行程序进程访问和控制的属性和方法
 
 /** 1.
- *  --1).process.argv : 一个包含命令行参数的数组,第一个元素是'node',第二个运行文件是‘js’文件名称,接下来的参数依次是命令行传入的参数            
+ *  --1).process.argv : 一个包含命令行参数的数组,第一个元素是'node',第二个运行的是‘js’文件名称,接下来的参数依次是命令行传入的参数            
     --2).process.execPath : 开启当前程序进程的程序的绝对路径node;       
     --3).process.env : 返回用户环境信息;            
     --4).process.version : 返回node版本信息            
@@ -25,10 +25,11 @@ const { log } = console;
 // log( process.version );
 // log( process.versions );
 // log( process.pid );
-// log( process.title );
+// process.title = 'process';
+// log( 'title->',process.title );
 // log( process.arch );
 // log( process.platform );
-// log( process.cwd() );
+log( process.cwd() );
 // log( __dirname )
 // log( process.chdir('../schedule') );
 // log( process.memoryUsage() );
@@ -44,10 +45,10 @@ const { log } = console;
 /**
  *  --stdin / stdout : 提供了操作输入数据和输出数据的方法，我们也通常称为I/O操作。
     --process.stdout.write( '123' );　
-    --process.stdin.on('data',function()) : 用于监听用户的输入数据
+    --process.stdin.on('data',function(){}) : 用于监听用户的输入数据
     --默认情况下输入流是关闭的，要监听处理输入流，首先要开启输入流 ：process.stdin.resume();　
  */
- var a,b;
+ /* var a,b;
  process.stdin.resume();
  process.stdout.write('请输入a的值：');
  process.stdin.on('data',(chunk)=>{
@@ -58,7 +59,10 @@ const { log } = console;
         b = Number(chunk);
         process.stdout.write('结果是：' + (a + b));
     }
- });
+ }); */
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 const { log } = console;
-const fs = require('fs'); // node 核心模块 之 fs
-// file system (文件系统)  操作系统中的文件或者文件夹
+const fs = require('fs'); // node 核心模块 之 fs  
+// file system (文件系统)  操作系统中的文件或者文件夹  
 
 /** 1.fs.open()  异步打开文件
    --fs.open(path,flags,[mode],callback)      ==>  异步打开文件        
@@ -21,7 +21,7 @@ const fs = require('fs'); // node 核心模块 之 fs
 // });
 
 // 2. fs.openSync() 同步打开文件
-// --fs.openSync(path,flags,[mode])  ==>同步打开文件    
+// --fs.openSync(path,flags,[mode]) ==> 同步打开文件    
 
 // let fd = fs.openSync('./1.txt','r');
 // console.log(fd);
@@ -101,13 +101,13 @@ const fs = require('fs'); // node 核心模块 之 fs
 // -------------------以上都属于底层的，以下更好用--------------------
 
 // 1. fs.writeFile(filename,data,(err)=>{})); 异步将数据写入一个文件，文件不存在则新建文件然后写入，文件存在则覆盖原文件内容；
-//    fs.writeFileSync(filename,data); 同步将数据写入一个文件，没有返回值
+//    fs.writeFileSync(filename,data); 同步将数据写入一个文件，没有返回值  
 
 // 2.fs.appendFile(filename,data,(err)=>{}); 异步的将数据添加到一个文件的尾部，如果不存在则新建文件然后写入，文件存在则将数据追加到后面；
-//    fs.appendFileSync(filename,data); 同步异步的将数据添加到一个文件的尾部，没有返回值；
+//    fs.appendFileSync(filename,data); 同步将数据添加到一个文件的尾部，没有返回值；
 
 // 3.fs.exists(filename,(exist)=>{});异步判断一个文件或文件夹是否存在
-//   fs.exists(filename); 同步判断一个文件或文件夹是否存在，返回true or false
+//   fs.existsSync(filename); 同步判断一个文件或文件夹是否存在，返回true or false
     
     // let filename = './2.txt';
     // fs.exists(filename,(exists)=>{
@@ -139,7 +139,7 @@ const fs = require('fs'); // node 核心模块 之 fs
     log(b.toString()); */
 
 // 5. fs.unlink(filename,(err)=>{}); 异步删除一个文件
-//    fs.unlinkSync(filename); 异步删除一个文件,没有返回值
+//    fs.unlinkSync(filename); 同步删除一个文件,没有返回值
 
   /*let filename = './1.txt';
     fs.unlink(filename,function(err){
@@ -148,7 +148,7 @@ const fs = require('fs'); // node 核心模块 之 fs
     fs.unlinkSync(filename); */
 
 // 6.fs.rename(filename,'new name',(err)=>{}); 异步重命名文件
-//    fs.renameSync(filename,'new name'); 同步重命名文件,没有返回值
+//   fs.renameSync(filename,'new name'); 同步重命名文件,没有返回值
 
 /*  let filename = './1.new.txt';
     fs.rename(filename,'1.new.txt',(err)=>{
@@ -158,7 +158,7 @@ const fs = require('fs'); // node 核心模块 之 fs
     log(f); */
 
 // 7.fs.stat(filename,(err,info)=>{}); 异步读取文件信息
-//   fs.statSync(filename); 同步读取文件信息,返回文件信息
+//   const f = fs.statSync(filename); 同步读取文件信息,返回文件信息; f.isDirectory() 是否是文件夹,返回true or false
 
    /*  let filename = './1.txt';
     fs.stat(filename,function(err,info){
@@ -197,7 +197,8 @@ const fs = require('fs'); // node 核心模块 之 fs
 // 11. fs.readdir(filename,(err,filelist)=>{}); 异步读取一个文件夹
 //     fs.readdirSync(filename); 同步读取一个文件夹
 
-      /*  fs.readdir('../node-peep',(err,filelist)=>{
+       fs.readdir('../node-peep',(err,filelist)=>{
+          console.log(filelist);
             filelist.forEach(item=>{
                 fs.stat(item,(err,info)=>{ // 16877,33188
                     if( info.mode == 16877 ){
@@ -209,10 +210,19 @@ const fs = require('fs'); // node 核心模块 之 fs
                     }
                 });
             });
-       }); */
+       }); 
 
-// 11个
+// 12.fs.createReadStream(); fs.createWriteStream()
+    // let ori = fs.createReadStream('./1.jpg');
+    // let newImg = fs.createWriteStream('./2.jpg');
+    // ori.pipe(newImg);
 
+// 13.path模块,用来处理文件路径
+const path = require('path');
+// path.resolve(); 返回当前文件所在目录,path.resolve(__dirname,'../public/index.css'); ..表示返回上一级
+// path.join('',''); 拼接路径    
+
+// 13个  
 
 
 

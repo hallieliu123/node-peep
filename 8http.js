@@ -3,9 +3,9 @@ const { log } = console;
 // node 核心模块 之 http
 
 // 网络通信的过程
-// 客户端发送一个 http 请求到指定的服务端 --> 服务端接收并处理请求 --> 返回数据到客户端
+// 客户端发送一个 http 请求到指定的服务端 --> 服务端接收并处理请求 --> 返回数据到客户端   
 
-// 搭建一个http的服务器，用于处理用户发送的http请求
+// 搭建一个http的服务器，用于处理用户发送的http请求   
 
 // 1.加载 http 模块
 // const http = require('http');
@@ -20,7 +20,6 @@ const { log } = console;
     // log(request.cookie);
     // log(request.url);
     // log(request.method);
-    // log(request.cookie);
 
     // reponse.writeHead(200,'describle status',{ 'content-type': 'text/html;charset=utf-8'});
     // reponse.write('<h1>Hello world!<h1>');
@@ -28,8 +27,6 @@ const { log } = console;
 
     // reponse.statusCode = 200;
     // reponse.end('Hello world!');
-    
-    // 
 
 // });
 
@@ -50,7 +47,7 @@ const { log } = console;
 //   callback: listen方法成功开启监听以后，会触发一个listening事件，该参数作为该事件的执行函数
 // server.listen(8080,'localhost');
 
-// log(server.address()); // 返回web服务器地址信息
+// log(server.address()); // 返回web服务器地址信息  
 
 // ** 4.request参数
 // request事件中回调函数的参数： request, response
@@ -61,7 +58,7 @@ const { log } = console;
 //    method: 请求方式
 //    cookie: 请求所携带的cookie
 
-// ** 5.response参数
+// ** 5.response参数  
 // request事件中回调函数的参数： request, response
 // response参数对象,提供操作响应数据的一系列方法
 //    res.setHeader('name','value') 设置返回头信息 ( 不要与res.writeHead(statusCode,[和状态码对应的文字],[设置返回头信息=res.setHeader()]))
@@ -73,28 +70,29 @@ const { log } = console;
 // 6.url模块，提供处理url参数的方法
 // const url = rquire('url');
 // let urlJson = url.parse(req.url);
-/* 
+
 const http = require('http');
+const fs = require('fs');
 const url = require('url');
 let server = http.createServer((req,res)=>{
     let urlJson = url.parse( req.url );
     // urlJson.query: 储存着查询字符串
-    // urlJson.pathname: 储存着url路径,
+    // urlJson.pathname: 储存着url路径
     // urlJson.href: 储存着完整url
-    log('url--->',urlJson);
-    if(urlJson.pathname.search(/index/)>-1){
-        res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>首页</h1>');
-    }else if(urlJson.pathname.search(/user/)>-1){
-        res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>个人中心</h1>');
-    }else{
-        res.writeHead(404,'describe status',{'content-type':'text/html;charset=utf-8'});
-        res.end('<h1>not found</h1>');
-    }
+    // if(urlJson.pathname.search(/index/)>-1){
+    //     res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>首页</h1>');
+    // }else if(urlJson.pathname.search(/user/)>-1){
+    //     res.writeHead(200,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>个人中心</h1>');
+    // }else{
+    //     res.writeHead(404,'describe status',{'content-type':'text/html;charset=utf-8'});
+    //     res.end('<h1>not found</h1>');
+    // }
+    // fs.createReadStream('./1.jpg').pipe(res); // res 
 });
 server.setTimeout(4000);
-server.listen(3000,'localhost'); */
+server.listen(3000,'localhost'); 
 
 // 7.fs 实现 表现，行为 分离
 /*
@@ -130,7 +128,7 @@ const server = http.createServer((req,res)=>{
             let str = '';
             req.on('data',(chunk)=>{
                 str += chunk;
-            })
+            });
             req.on('end',()=>{
                 log('str--->',str); // 这才是传过来的数据
                 let p = querystring.parse(str);  // 然后再进行转成对象
@@ -158,10 +156,15 @@ const getHtml = (filename,req,res) => {
         }
     });
 }
-
 */
+
 // 8. get 和 post 请求，对数据的处理
 //   post 发送的数据会被写入缓存区，需要通过request参数对象中的on方法监听，data和end事件来进行数据拼接处理
+
+
+
+
+
 
 
 

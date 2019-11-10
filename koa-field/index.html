@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    我是html模板
+    <form action='/user/login' method='get''>
+        <input type="text" name="name">
+        <input type="password" name="password">
+        <input type="submit" value="提交">
+    </form>
+    <form action='/user/upload/avatar' method='post' enctype ="multipart/form-data">
+        <input type="file" name="file1">
+        <input type="file" name="file2">
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
