@@ -216,6 +216,15 @@ const fs = require('fs'); // node 核心模块 之 fs
     // let ori = fs.createReadStream('./1.jpg');
     // let newImg = fs.createWriteStream('./2.jpg');
     // ori.pipe(newImg);
+<<<<<<< HEAD
+=======
+
+// 13.path模块,用来处理文件路径
+// path.resolve(); 返回当前文件所在目录,path.resolve(__dirname,'../public/index.css'); ..表示返回上一级
+// path.join('',''); 拼接路径
+
+// 13个
+>>>>>>> 7fbe72b5f707ba5474dbe42e50683ae7a3f20688
 
 // 13.path模块,用来处理文件路径
 const path = require('path');
