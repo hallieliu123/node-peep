@@ -10,11 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "fs.promised": "^3.0.0",
-<<<<<<< HEAD
     "koa": "^2.11.0",
-=======
-    "koa": "^2.10.0",
->>>>>>> 7fbe72b5f707ba5474dbe42e50683ae7a3f20688
     "koa-body": "^4.1.1",
     "koa-compose": "^4.1.0",
     "koa-route": "^3.2.0",
